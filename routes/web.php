@@ -28,4 +28,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/customers', function () {
+    return Inertia::render('Customers/List');
+})->middleware(['auth', 'verified'])->name('customers');
+
+
+require __DIR__ . '/auth.php';
